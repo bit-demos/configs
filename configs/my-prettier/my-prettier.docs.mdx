@@ -1,0 +1,37 @@
+---
+description: Shared Prettier configuration as a component
+labels: ['prettier', 'configurations']
+---
+
+Use this component in any project to share the same Prettier configuration.
+
+## Instructions
+
+Install this component as a `devDependency` in your project.
+
+```bash
+yarn add @learn-bit-react/configs.my-prettier --dev
+```
+
+Import this component in your project's Prettier config:
+
+```js
+module.exports = {
+  ...require('@learn-bit-react/configs.my-prettier')
+  // override what ever you  want eg:
+  // tabWidth: 4
+};
+```
+
+## What's included
+
+Basic configuration with exaggerated tab with to easily test it out
+
+```json
+{
+  "trailingComma": "es5",
+  "tabWidth": 16,
+  "semi": true,
+  "singleQuote": false
+}
+```

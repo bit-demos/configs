@@ -1,0 +1,9 @@
+module.exports = {
+  compilerOptions: {
+    module: 'system',
+    noImplicitAny: true,
+    removeComments: true,
+    preserveConstEnums: true,
+    sourceMap: true
+  }
+};

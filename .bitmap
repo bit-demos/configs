@@ -11,9 +11,21 @@
 {
     "my-eslint": {
         "scope": "learn-bit-react.configs",
-        "version": "0.0.5",
+        "version": "0.0.7",
         "mainFile": "index.js",
         "rootDir": "configs/my-eslint"
+    },
+    "my-prettier": {
+        "scope": "learn-bit-react.configs",
+        "version": "0.0.4",
+        "mainFile": "index.js",
+        "rootDir": "configs/my-prettier"
+    },
+    "my-tsconfig": {
+        "scope": "learn-bit-react.configs",
+        "version": "0.0.3",
+        "mainFile": "index.js",
+        "rootDir": "configs/my-tsconfig"
     },
     "$schema-version": "14.9.0"
 }

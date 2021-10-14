@@ -1,0 +1,39 @@
+---
+description: Shared TS configuration as a component
+labels: ['typescript', 'configurations']
+---
+
+WORK IN PROGRESS - USE WITH CAUTION
+
+Use this component in any project to share the same TS Config configuration.
+
+## Instructions
+
+Install this component as a `devDependency` in your project.
+
+```bash
+yarn add @learn-bit-react/configs.my-tsconfig --dev
+```
+
+Import this component in your project's TS config:
+
+```js
+{
+  "extends": "@learn-bit-react/configs.my-tsconfig",
+  "exclude": ["dist"]
+}
+```
+
+## What's included
+
+```json
+{
+  "compilerOptions": {
+    "module": "system",
+    "noImplicitAny": true,
+    "removeComments": true,
+    "preserveConstEnums": true,
+    "sourceMap": true
+  }
+}
+```
