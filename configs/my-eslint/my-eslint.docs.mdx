@@ -1,0 +1,28 @@
+---
+description: Shared ESLint configuration as a component
+labels: ['eslint', 'configurations']
+---
+
+## Instructions
+
+- Install this component as a `devDependency` in your project.
+
+```bash
+yarn add @learn-bit-react/configs.my-eslint
+```
+
+- Import this component in your project's ESlint config:
+
+```js
+module.exports = {
+  extends: [require.resolve('configs.my-eslint')]
+};
+```
+
+## What's included
+
+```js
+rules: {
+'no-console': 'error'
+}
+```
