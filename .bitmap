@@ -23,7 +23,7 @@
     },
     "my-tsconfig": {
         "scope": "learn-bit-react.configs",
-        "version": "0.0.3",
+        "version": "0.0.4",
         "mainFile": "index.js",
         "rootDir": "configs/my-tsconfig"
     },
