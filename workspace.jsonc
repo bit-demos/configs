@@ -1,7 +1,7 @@
 /**
  * this is the main configuration file of your bit workspace.
- * for full documentation, please see: https://harmony-docs.bit.dev/workspace/configurations
- **/ {
+ * for full documentation, please see: https://bit.dev/docs/workspace/workspace-configuration
+ **/{
   "$schema": "https://static.bit.dev/teambit/schemas/schema.json",
   /**
    * main configuration of the Bit workspace.
@@ -10,7 +10,7 @@
     /**
      * the name of the component workspace. used for development purposes.
      **/
-    "name": "my-workspace-name",
+    "name": "configs example components",
     /**
      * set the icon to be shown on the Bit server.
      **/
@@ -27,7 +27,7 @@
     /**
      * default scope for all components in workspace.
      **/
-    "defaultScope": "learn-bit-react.configs"
+    "defaultScope": "learn-harmony.configs"
   },
   /**
    * main configuration for component dependency resolution.
@@ -47,7 +47,7 @@
    * workspace. this is extremely useful for upgrading, aligning and building components with a new
    * set of dependencies. a rule can be a directory or a component-id/namespace, in which case,
    * wrap the rule with curly brackets (e.g. `"{ui/*}": {}`)
-   * see https://harmony-docs.bit.dev/aspects/variants for more info.
+   * see https://bit.dev/docs/workspace/variants for more info.
    **/
   "teambit.workspace/variants": {
     /**
