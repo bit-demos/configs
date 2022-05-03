@@ -7,21 +7,52 @@ Use this component in any project to share the same Prettier configuration.
 
 ## Instructions
 
+:::note
+This is a demo component - in order to create your own, run `bit fork learn-harmony.configs/my-prettier` and apply your own linting rules as required.
+Then mirror the instructions below in order to use your shareable config in either a standard workspace or bit environment.
+::: 
+
+### Project-level usage
+
 Install this component as a `devDependency` in your project.
 
 ```bash
-yarn add @learn-bit-react/configs.my-prettier --dev
+yarn add @learn-harmony/configs.my-prettier --dev
 ```
-
-Import this component in your project's Prettier config:
 
 ```js
 module.exports = {
-  ...require('@learn-bit-react/configs.my-prettier')
+  ...require('@learn-harmony/configs.my-prettier')
   // override what ever you  want eg:
   // tabWidth: 4
 };
 ```
+
+### Bit env usage
+
+In order to use this config in your env's prettier service, add the following code to the env compose/overrides array in the main.runtime.ts file of your env.  
+E.g. for a custom react env:
+
+```js
+/**
+ * override the Prettier default config here the check your formatting
+ * @example
+ * bit format --check
+ * bit format
+ */
+react.usePrettier({
+transformers: [
+  (config) => {
+    config.raw = { ...config.clone(), ...require('@learn-harmony/configs.my-prettier') }
+    config.setKey('tabWidth', 2); // to override or extend the imported config
+    return config;
+  }
+]
+}),
+```
+
+You can see an example of how to add this by creating a dummy new react env from the template - `bit create react-env my-env` - and then finding the sample usePrettier override in the main.runtime.ts file. 
+Note - remember to `bit remove` this dummy env from your workspace when you've finished with it.
 
 ## What's included
 

@@ -7,6 +7,13 @@ Use this component in any project to share the same ESLint configuration.
 
 ## Instructions
 
+:::note
+This is a demo component - in order to create your own, run `bit fork learn-harmony.configs/my-eslint` and apply your own linting rules as required.
+Then mirror the instructions below in order to use your shareable config in either a standard workspace or bit environment.
+::: 
+
+### Project-level usage
+
 Install this component as a `devDependency` in your project.
 
 ```bash
@@ -17,11 +24,36 @@ Import this component in your project's ESlint config:
 
 ```js
 module.exports = {
-  extends: [require.resolve('@learn-bit-react/configs..my-eslint')]
+  extends: [require.resolve('@learn-harmony/configs.my-eslint')]
 };
 ```
 
 Add a console.log() statement to one of the files in your project to test it out.
+
+### Bit env usage
+
+In order to use this config in your env's linting service, add the following code to the env compose/overrides array in the main.runtime.ts file of your env.  
+E.g. for a custom react env:
+
+```js
+/**
+ * override the ESLint default config here then check your files for lint errors
+ * @example
+ * bit lint
+ * bit lint --fix
+ */
+react.useEslint({
+transformers: [
+  (config) => {
+    config.addExtends(require.resolve('@learn-harmony/configs.my-eslint'));
+    return config;
+  }
+]
+}),
+```
+
+You can see an example of how to add this by creating a dummy new react env from the template - `bit create react-env my-env` - and then finding the sample useEslint in the main.runtime.ts file. 
+Note - remember to `bit remove` this dummy env from your workspace when you've finished with it.
 
 ## What's included
 
