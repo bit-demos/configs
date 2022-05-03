@@ -7,6 +7,54 @@ Use this component in any project to share the same TS Config configuration.
 
 ## Instructions
 
+:::note
+This is a demo component - in order to create your own, run `bit fork learn-harmony.configs/my-tsconfig` and apply your own typescript configs as required.
+Then mirror the instructions below in order to use your shareable config in either a standard workspace or bit environment.
+::: 
+
+### Project-level usage
+
+Install this component as a `devDependency` in your project.
+
+```bash
+yarn add @learn-harmony/configs.my-tsconfig --dev
+```
+
+Import this component in your project's TS config:
+
+```js
+{
+  "extends": "@learn-harmony/configs.my-tsconfig/tsconfig",
+  "exclude": ["dist"]
+}
+```
+
+### Bit env usage
+
+In order to use this config in your env's prettier service, add the following code to the env compose/overrides array in the main.runtime.ts file of your env.  
+E.g. for a custom react env:
+
+```js
+react.useTypescript({
+  devConfig: [
+    (config) => {
+      config.mergeTsConfig(require('@learn-harmony/configs.my-tsconfig/tsconfig.json'));
+      return config;
+    }
+  ],
+  buildConfig: [
+    (config) => {
+      config.mergeTsConfig(require('@learn-harmony/configs.my-tsconfig/tsconfig.json'));
+      return config;
+    }
+  ],
+}),
+```
+
+You can see an example of how to add this by creating a dummy new react env from the template - `bit create react-env my-env` - and then finding the sample useTypescript override in the main.runtime.ts file. 
+Note - remember to `bit remove` this dummy env from your workspace when you've finished with it.
+
+
 Install this component as a `devDependency` in your project.
 
 ```bash
